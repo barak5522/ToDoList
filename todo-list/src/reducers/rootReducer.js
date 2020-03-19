@@ -1,8 +1,8 @@
 const initState = {
   tasks: [
-    {id: '1', task: 'Squirtle Laid an Egg'},
-    {id: '2', task: 'Charmander Laid an Egg'},
-    {id: '3', task: 'a Helix Fossil was Found'}
+    {id: '1', task: 'Squirtle Laid an Egg', confirm: false},
+    {id: '2', task: 'Charmander Laid an Egg', confirm: true},
+    {id: '3', task: 'a Helix Fossil was Found', confirm: false}
   ]
 }
 
@@ -20,7 +20,7 @@ const rootReducer = (state = initState, action) => {
     } else if (action.type === 'ADD_TASK'){
         return {
             ...state,
-            tasks: [...tasks, action.task]
+            tasks: [...state.tasks, action.task]
         }
     } else if (action.type === 'EDIT_TASK'){
         let newTasks = state.tasks.filter(task => {
