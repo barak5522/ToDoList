@@ -5,17 +5,17 @@ export const deleteTask = (id) => {
     }
 }
 
-export const AddTask = (id, task, confirm) => {
+export const AddTask = (task) => {
     return {
-        type: 'DELETE_TASK',
-        task: {id: id, task:task, confirm:false }
+        type: 'ADD_TASK',
+        task: {id: 5, task:task, confirm:false }
 
     }
 }
 
 export const editTask = (id, task, confirm) => {
     return {
-        type: 'DELETE_TASK',
+        type: 'EDIT_TASK',
         task: {id: id, task:task, confirm:confirm }
     }
 }

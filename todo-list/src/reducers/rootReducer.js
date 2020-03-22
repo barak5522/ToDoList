@@ -11,24 +11,25 @@ const initState = {
 const rootReducer = (state = initState, action) => {
     if(action.type === 'DELETE_TASK'){
         let newTasks = state.tasks.filter(task => {
-            return task.id !== action.task.id
+            return task.id !== action.id
         });
         return {
             ...state,
             tasks: newTasks
     }
     } else if (action.type === 'ADD_TASK'){
+        console.log(action)
         return {
             ...state,
             tasks: [...state.tasks, action.task]
         }
     } else if (action.type === 'EDIT_TASK'){
-        let newTasks = state.tasks.filter(task => {
-            return task.id !== action.task.id
-        });
         return {
-            ...state,
-            tasks: [...newTasks, action.task]
+            ...state, 
+            tasks: state.tasks.map(
+                (task) => task.id === action.task.id ? {...task, task: action.task.task, confirm: action.task.confirm}
+                                        : task
+            )
         }
     }
     return state;
