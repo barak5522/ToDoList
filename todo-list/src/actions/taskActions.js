@@ -8,7 +8,7 @@ export const deleteTask = (id) => {
 export const AddTask = (task) => {
     return {
         type: 'ADD_TASK',
-        task: {id: 5, task:task, confirm:false }
+        task: {id: Math.random(), task:task, confirm:false }
 
     }
 }
