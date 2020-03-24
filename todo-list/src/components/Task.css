@@ -1,4 +1,15 @@
 .action-icon{
     height: 20px;
     width: 20px;
+    float: right;    
+    margin-left: 5px;
+}
+
+.task {
+    margin-top: 10px;
+    margin-left: 50%;
+    position: relative;
+    left: -230px;
+    width: 460px;
+    text-align: left;
 }
