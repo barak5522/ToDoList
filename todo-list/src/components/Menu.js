@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteTask, showAll, hideDone } from '../actions/taskActions.js'
-import './Task.css'
-
+import { Button } from '@material-ui/core'
+import './Menu.css'
 
 
 class Menu extends Component {
@@ -28,9 +28,12 @@ class Menu extends Component {
     render() {
         return (
             <div className="menu">
-                <button onClick={this.hideDoneTasks}>hide all done tasks</button>
-                <button onClick={this.deleteDoneTasks}>delete all done tasks</button>
-                <button onClick={this.showAllTasks}>show all</button>
+                <Button className="button" variant="outlined" color="primary" onClick={this.hideDoneTasks}>
+                hide all done tasks</Button>
+                <Button className="button" variant="outlined" color="primary" onClick={this.deleteDoneTasks}>
+                delete all done tasks</Button>
+                <Button className="button" variant="outlined" color="primary" onClick={this.showAllTasks}>
+                show all</Button>
             </div>
         )
     }

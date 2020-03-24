@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { AddTask } from '../actions/taskActions.js'
+import { Card, CardContent, TextField } from '@material-ui/core';
+import './AddTask.css'
 
 class AddTodo extends Component {
   state = {
@@ -21,12 +23,19 @@ class AddTodo extends Component {
   }
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Add a new todo:</label>
-          <input type="text" onChange={this.handleChange} value={this.state.content} />
-        </form>
-      </div>
+      <Card className="add-task">
+        <CardContent className="new-task-content">
+          <form onSubmit={this.handleSubmit}>
+            <TextField
+              id="standard-full-width"
+              style={{ margin: 8 }}
+              placeholder="Add a new task:"
+              onChange={this.handleChange} 
+              value={this.state.content}
+            />
+          </form>
+        </CardContent>
+      </Card>
     )
   }
 }
