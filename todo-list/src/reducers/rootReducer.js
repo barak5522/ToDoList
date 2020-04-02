@@ -3,11 +3,7 @@ const initState = {
     {id: '1', task: 'Squirtle Laid an Egg', confirm: false, hide: false},
     {id: '2', task: 'Charmander Laid an Egg', confirm: true, hide: false},
     {id: '3', task: 'a Helix Fossil was Found', confirm: false, hide: false}
-  ],
-//   filters: [
-//       {buttonText: "hide all done tasks", field: confirm, active: false},
-//       {buttonText: "delete all done tasks", field: confirm, active: false}
-//   ]
+  ]
 }
 
 
