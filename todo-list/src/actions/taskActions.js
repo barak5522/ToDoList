@@ -31,3 +31,10 @@ export const hideDone = () => {
         type: 'HIDE_DONE',
     }
 }
+
+export const AddTaskContent = (content) => {
+    return {
+        type: 'FILTER',
+        filter: content
+    }
+}

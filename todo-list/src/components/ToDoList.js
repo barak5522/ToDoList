@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import Tasks from './Tasks.js'
 import AddTask from './AddTask.js'
@@ -9,6 +9,7 @@ function ToDoList() {
     const tasks = useSelector(state => state.tasks)
     let tasksNumber = tasks.length
     let doneTasksNumber = tasks.filter(task => task.confirm).length
+    
     return(
         <div className = 'tasks'>
             <h1 className = 'title'>Todo list</h1>
