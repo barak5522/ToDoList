@@ -3,7 +3,8 @@ const initState = {
     {id: '1', task: 'Squirtle Laid an Egg', confirm: false, hide: false},
     {id: '2', task: 'Charmander Laid an Egg', confirm: true, hide: false},
     {id: '3', task: 'a Helix Fossil was Found', confirm: false, hide: false}
-  ]
+  ],
+  filter: ''
 }
 
 
@@ -18,10 +19,15 @@ const rootReducer = (state = initState, action) => {
             tasks: newTasks
     }
     } else if (action.type === 'ADD_TASK'){
-        console.log(action)
-        return {
-            ...state,
-            tasks: [...state.tasks, action.task]
+
+        if (state.tasks.find(task => task.task === action.task.task)) {
+            alert("task alredy exist")
+        } else {
+            return {
+                ...state,
+                tasks: [...state.tasks, action.task],
+                filter: ''
+            }
         }
     } else if (action.type === 'EDIT_TASK'){
         return {
@@ -46,6 +52,11 @@ const rootReducer = (state = initState, action) => {
                 (task) => task.confirm === true ? {...task, hide:true}
                                         : task
             )
+        }
+    } else if (action.type === 'FILTER'){
+        return {
+            ...state,
+            filter: action.filter
         }
     }
     return state;
